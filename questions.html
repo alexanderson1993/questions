@@ -1,0 +1,48 @@
+<head>
+<meta name="apple-mobile-web-app-title" content="Questions">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="apple-touch-icon" href="/themes/default/public/icon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Questions</title>
+</head>
+
+<body>
+	{{> main}}
+</body>
+
+<template name="main">
+	{{> header_page}}
+	{{#each page}}
+	{{> question_page this}}
+	{{/each}}
+	{{> footer_page}}
+</template>
+
+<template name="header_page">
+	<div class="page noCount inactive" style="background-color: {{backgroundColor}};">
+		<section id="title">
+			<h1><span>100</span> Questions</h1>
+			<h2>How to spark authenticity</h2>
+		</section> 
+		<p>Are you tired of superficial conversations? So am I. These 100 questions are designed to add depth and character to your conversations. Try them out on anyone - a co-worker, a peer, a friend, or a significant other - and see your relationship strengthen. <button type="button">Click here to start</button></p>
+	</div>
+</template>
+
+<template name="question_page">
+	<div class="page" style="background-color: {{backgroundColor}};">
+		<p class="content">{{content}}<button type="button">Next</button></p>
+	</div>
+	
+</template>
+
+<template name="footer_page">
+	<div class="page" style="background-color: {{backgroundColor}};">
+		<section id="title">
+			<h1>That's all!</h1>
+			<h2>Thanks for reading</h2>
+		</section> 
+		<p>Inspiration from <a href="http://36questionsinlove.com">36 Questions</a> and <a href="https://medium.com/dating-meets-data/questions-to-spark-authenticity-bac0099f04a7">this article</a>.</p>
+		<p><iframe src="https://ghbtns.com/github-btn.html?user=alexanderson1993&repo=questions&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></p>
+	</div>
+</template>

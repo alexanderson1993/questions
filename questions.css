@@ -1,0 +1,147 @@
+/* CSS declarations go here */
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,400italic);
+
+*{
+	box-sizing: border-box;
+}
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+h1, h2{
+	font-weight: 600;
+	color: #444444;
+	opacity: .99;
+}
+h1{
+	line-height: 0;
+	font-size: 8vw;
+}
+h1 span{
+	font-size: 16vw;
+}
+h2{
+	font-size: 5vw;
+	font-style: italic;
+}
+p{
+	color: #444444;
+	opacity: .8;
+	font-size: 2vw;
+	line-height: 2vw;
+}
+p.content{
+	width: 100%;
+	text-align: center;
+	font-size: 4vw;
+	line-height: 4.5vw;
+}
+@media only screen and (max-width : 768px) { 
+	p{
+		color: #444444;
+		opacity: .8;
+		font-size: 6vw;
+		line-height: 6.5vw;
+	}
+	p.content{
+		width: 100%;
+		text-align: center;
+		font-size: 8vw;
+		line-height: 8.5vw;
+	}
+}
+p button{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 240px;
+	color: #fff;
+	border-radius: 5px;
+	padding: 1em 2em;
+	background: rgba(255,255,255,0);
+	border: 3px solid rgba(210,210,210,0.9);
+	font-weight: 600;
+	font-size: 16px;
+	margin-top: 20px;
+	transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+@media only screen and (max-width : 768px) { 
+	p button{
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		width: 140px;
+		color: #fff;
+		border-radius: 5px;
+		padding: .5em 1em;
+		background: rgba(255,255,255,0);
+		border: 2px solid rgba(210,210,210,0.9);
+		font-weight: 600;
+		font-size: 12px;
+		margin-top: 10px;
+		transition: background-color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out;
+		-webkit-backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-appearance: button;
+		cursor: pointer;
+	}
+}
+p button:hover{
+	background: rgba(255,255,255,0.4);
+
+}
+
+.page{
+	counter-increment: section;
+	height: 100vh;
+	width: 100vw;
+	padding: 10vw;
+	padding-top: 20vw;
+	position: fixed;
+	-webkit-transform: translateX(100vw);
+	top: 0;
+	left: 0vw;
+	transition: transform 1.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+	-webkit-transition: left 1.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.page p:before{
+	content: counter(section);
+	position: fixed;
+	font-size: 16vw;
+	text-align: center;
+	opacity: 0.3;
+	bottom: 4vw;
+}
+.page.noCount{
+	counter-reset: section; 
+		counter-increment: none;
+}
+.page.noCount p:before{
+	content: '';
+}
+.page.inactive{
+	-webkit-transform: translateX(0vw);
+}
+.page.active ~ .page{
+	-webkit-transform: translateX(100vw);
+}
+
+.page.active + .page{
+	-webkit-transform: translateX(0vw);
+}
+.page.active{
+	-webkit-transform: translateX(-100vw) !important;
+}
+h1{
+	margin: 0;
+	padding: 0;
+}
