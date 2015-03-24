@@ -3,7 +3,7 @@ if (Meteor.isClient) {
 
   Template.main.helpers({
     page: function () {
-      return questions;
+      return shuffle(questions);
     },
 
   });
